@@ -7,15 +7,15 @@ Your application can then be used with blog clients like BlogJet and MarsEdit.
 
 You can also define your blog handler right in the rackup file or elsewhere:
 
-	rpc_endpoint = BlogRPC.generate_endpoint do | handler |
-	    handler.rpc "mt.publishPost", :in => [:int, :string, :string], :out => :bool do | postid, user, pw |
-	      login!(user, pw)
-	      get_entry(postid).update_attributes :draft => false
-	      true
-	    end
-	end
-
-	run rpc_endpoint
+    rpc_endpoint = BlogRPC.generate_endpoint do | handler |
+        handler.rpc "mt.publishPost", :in => [:int, :string, :string], :out => :bool do | postid, user, pw |
+          login!(user, pw)
+          get_entry(postid).update_attributes :draft => false
+          true
+        end
+    end
+    
+    run rpc_endpoint
 	
 
 == More involved examples
@@ -24,10 +24,10 @@ The gem consists of two parts. The first part is a Rack application that will ha
 wrapping exceptions properly, detecting the needed parameters and configuring all of the IO so that Ruby's XML-RPC facilities can get at it.
 You use it like this:
 
-	rpc_endpoint = BlogRPC::RackApp.new(MyBlogHandler.new)
-	rpc_endpoint.blog_url = "http://site.com"
-	rpc_endpoint.rpc_endpoint_url = "/secret-rpc-url.xml"
-	rpc_endpoint.call(env)
+    rpc_endpoint = BlogRPC::RackApp.new(MyBlogHandler.new)
+    rpc_endpoint.blog_url = "http://site.com"
+    rpc_endpoint.rpc_endpoint_url = "/secret-rpc-url.xml"
+    rpc_endpoint.call(env)
 
 The BlogHandler object should be a more or less complete subclass of BlogHandler that you provide. When the RPC application receives a GET request
 it will respond with the RSD fragment that will auto-configure your blogging client (like MarsEdit or BlogJet).
