@@ -10,10 +10,12 @@ rescue Bundler::BundlerError => e
   exit e.status_code
 end
 require 'rake'
-
+require File.dirname(__FILE__) + "/lib/blogrpc"
 require 'jeweler'
+
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
+  gem.version = BlogRPC::VERSION
   gem.name = "blogrpc"
   gem.homepage = "http://github.com/julik/blogrpc"
   gem.license = "MIT"
