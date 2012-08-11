@@ -3,7 +3,7 @@
 BlogRPC is a set of XML RPC server facilities which allow you to easily create a blogging XML-RPC backend in your Ruby web application.
 Your application can then be used with blog clients like BlogJet and MarsEdit.
 
-## Quickly defining a blog RPC handler
+== Quickly defining a blog RPC handler
 
 You can also define your blog handler right in the rackup file or elsewhere:
 
@@ -18,7 +18,7 @@ You can also define your blog handler right in the rackup file or elsewhere:
 	run rpc_endpoint
 	
 
-## More involved examples
+== More involved examples
 
 The gem consists of two parts. The first part is a Rack application that will handle XML-RPC requests and respond to them. It handles things like
 wrapping exceptions properly, detecting the needed parameters and configuring all of the IO so that Ruby's XML-RPC facilities can get at it.
