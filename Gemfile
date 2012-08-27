@@ -11,6 +11,6 @@ gem "builder", "~> 3.0.0"
 group :development do
   gem "rdoc", "~> 3.12"
   gem "jeweler", "~> 1.8.4"
-  gem "flexmock", "~>0.8"
+  gem "flexmock", "~> 1.0"
   gem "rack-test"
 end
