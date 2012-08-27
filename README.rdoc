@@ -5,7 +5,7 @@ Your application can then be used with blog clients like BlogJet and MarsEdit.
 
 == Quickly defining a blog RPC handler
 
-You can also define your blog handler right in the rackup file or elsewhere:
+Define your blog handler right in the rackup file or elsewhere:
 
     rpc_endpoint = BlogRPC.generate_endpoint do | handler |
         handler.rpc "mt.publishPost", :in => [:int, :string, :string], :out => :bool do | postid, user, pw |
