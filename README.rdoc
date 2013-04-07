@@ -19,16 +19,16 @@ Define your blog handler right in the rackup file:
 
 or as a separate class:
 
-	class MyHandler < BlogRPC::BasicHandler
-	  rpc "mt.publishPost", :in => [:int, :string, :string], :out => :bool do | postid, user, pw |
-	    login!(user, pw)
-	    get_entry(postid).update_attributes :draft => false
-	    true
-	  end
-	end
+    class MyHandler < BlogRPC::BasicHandler
+      rpc "mt.publishPost", :in => [:int, :string, :string], :out => :bool do | postid, user, pw |
+        login!(user, pw)
+        get_entry(postid).update_attributes :draft => false
+        true
+      end
+    end
 	
     rpc_endpoint = BlogRPC::RackApp.new(MyHandler.new)
-	run rpc_endpoint
+    run rpc_endpoint
 	
 
 == More involved examples
