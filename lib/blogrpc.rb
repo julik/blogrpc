@@ -1,5 +1,5 @@
 module BlogRPC
-  VERSION = "1.0.0"
+  VERSION = "1.0.1"
   
   # Generate an RPC Rack application and yield it's only handler class to the passed block.
   # Call rpc(...) on the yielded class to define methods
