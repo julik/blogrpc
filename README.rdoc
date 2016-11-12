@@ -33,8 +33,10 @@ or as a separate class:
 
 == More involved examples
 
-The gem consists of two parts. The first part is a Rack application that will handle XML-RPC requests and respond to them. It handles things like
-wrapping exceptions properly, detecting the needed parameters and configuring all of the IO so that Ruby's XML-RPC facilities can get at it.
+The gem consists of two parts. The first part is a Rack application that will handle XML-RPC requests and respond to them. It's primary role is
+an adapter between the old Ruby's XML-RPC library that ships with Ruby and the more modern Rack infrastructure.
+
+It handles things like wrapping exceptions properly, detecting the needed parameters and configuring all of the IO so that Ruby's XML-RPC facilities can get at it.
 You use it like this:
 
     rpc_endpoint = BlogRPC::RackApp.new(MyBlogHandler.new)

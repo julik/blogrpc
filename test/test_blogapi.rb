@@ -1,8 +1,8 @@
-require 'helper'
+require_relative 'helper'
 require 'xmlrpc/client'
 require 'rack/test'
 
-class TestRackHandler < Test::Unit::TestCase
+class TestRackHandler < Minitest::Test
   include Rack::Test::Methods
   
   def response

@@ -27,10 +27,8 @@ end
 Jeweler::RubygemsDotOrgTasks.new
 
 require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
+Rake::TestTask.new do |t|
+  t.test_files = FileList['test/**/test_*.rb']
 end
 
 task :default => :test

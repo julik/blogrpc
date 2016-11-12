@@ -1,6 +1,6 @@
-require 'helper'
+require_relative 'helper'
 
-class TesRpcHandlerMethodDefinitions < Test::Unit::TestCase
+class TesRpcHandlerMethodDefinitions < Minitest::Test
   
   class Sub < BlogRPC::BasicHandler
     rpc "julik.testMethod", :in => [:int], :out => :array do
